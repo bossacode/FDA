@@ -123,7 +123,7 @@ if __name__ == "__main__":
 
     T = 101 # number of timepoints
     tseq = torch.linspace(0, 1, T)  # timepoints
-    n = 5000   # number of data
+    n = 10000   # number of data
 
     if not os.path.exists("data/"):
         os.makedirs("data/")
