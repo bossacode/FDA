@@ -80,3 +80,11 @@ def train_pipeline(model, config):
             scheduler.step()
             
             wandb.log({"train_loss":train_loss, "val_loss":val_loss}, step=n_epoch)
+
+
+def test_pipeline(model, config):
+    test_dataset = CustomDataset(x_data_path=config["x_test_path"], y_data_path=config["y_test_path"])
+    test_dataloader = DataLoader(test_dataset, config["batch_size"])
+
+    loss_fn = nn.MSELoss()
+    test_loss = eval(model, test_dataloader, loss_fn, config["device"])
