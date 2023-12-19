@@ -1,0 +1,5 @@
+pytorch
+scikit-learn
+scikit-fda
+matplotlib
+wandb
